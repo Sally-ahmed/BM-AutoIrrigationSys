@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "07c8844b-de31-46a0-accc-0034d89e52b2",
+		"name": "Auto Irrigation System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26733350"
+	},
+	"item": [
+		{
+			"name": "add plot",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"size\" : 2400, \"crop\" : \"maize\", \"location\" : \"embu\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/plot/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"plot",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all plots",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/plot/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"plot",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "configure Plot",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"waterAmountLtr\": 3000, \"irrigationStartTime\": \"14:52:00\", \"irrigationEndTime\": \"16:00:00\" }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/plot/configure/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"plot",
+						"configure",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Plot",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"size\": 3500, \"crop\": \"Beans\", \"location\": \"Sinai\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/plot/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"plot",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sensor Notify",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"plotId\":35,\r\n        \"size\": 3500.0,\r\n        \"crop\": \"Beans\",\r\n        \"location\": \"Sinai\"\r\n       }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/sensor/notify",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"sensor",
+						"notify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send Alert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"size\" : 3000.0, \"crop\" : \"Banana\", \"location\" : \"Fayoum\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/alerts/send",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"alerts",
+						"send"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
